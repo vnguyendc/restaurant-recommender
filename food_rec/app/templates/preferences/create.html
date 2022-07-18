@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "main/base.html" %}
 {% load widget_tweaks %}
 
 {% block title %}Create a Preference{% endblock %}
@@ -20,6 +20,18 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-4">
+                            
+                            <div class="form-group">
+                                <label for="name">Preference Nickname</label>
+                                {% render_field form.name class="form-control" %}
+                                <!-- <input type="text" name="rating_threshold" id="rating_threshold" class="form-control" placeholder="Ex. 4.5"></textarea> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            
                             <div class="form-group">
                                 <label for="rating_threshold">Minimum Rating (1-5 stars)</label>
                                 {% render_field form.rating_threshold class="form-control" %}

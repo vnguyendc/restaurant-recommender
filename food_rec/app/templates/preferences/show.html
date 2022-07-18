@@ -1,0 +1,15 @@
+{% extends "main/base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}Create a Preference{% endblock %}
+
+{% block main %}
+
+{% for pref in preferences%}
+    <div class="container">
+        <h3> {{ pref }} </h3>
+        
+    </div>
+{% endfor %}
+
+{% endblock %}

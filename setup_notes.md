@@ -7,7 +7,7 @@
 3. set up virtual env
     python -m venv py310
 4. start virtual env
-    py310\Scripts\activate
+    source py310\Scripts\activate
 5. install django
     pip install django
 6. start django app

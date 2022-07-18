@@ -1,6 +1,5 @@
 from django import forms
-from .models import Preference
-from tags.models import Tag
+from .models import Preference, Tag
 
 class PreferenceForm(forms.ModelForm):
     
@@ -16,5 +15,5 @@ class PreferenceForm(forms.ModelForm):
 
     class Meta:
         model = Preference
-        fields = ['rating_threshold', 'location', 'distance', 'keywords', 'pricing_range']
+        fields = ['name', 'rating_threshold', 'location', 'distance', 'keywords', 'pricing_range']
     

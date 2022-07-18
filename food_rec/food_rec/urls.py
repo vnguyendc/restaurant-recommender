@@ -20,8 +20,6 @@ from app.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include("app.urls")),
-    path('', include("django.contrib.auth.urls")),
-    path('preferences/', include('preferences.urls'))
-    # path('profile/<str:name>')
+    # path('', include("django.contrib.auth.urls")),
+    path('', include('app.urls'))
 ]

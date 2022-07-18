@@ -40,10 +40,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'app.apps.AppConfig',
-    'preferences.apps.PreferencesConfig',
-    'restaurants.apps.RestaurantsConfig',
-    'tags.apps.TagsConfig',
-    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [

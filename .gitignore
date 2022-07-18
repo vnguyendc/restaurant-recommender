@@ -1,0 +1,5 @@
+/food_rec/*/__pycache__/*
+/food_rec/*/*/__pycache__/*
+
+.DS_Store
+/food_rec/.DS_Store
