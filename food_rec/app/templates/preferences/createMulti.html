@@ -1,0 +1,74 @@
+{% extends "main/base.html" %} {% load widget_tweaks %} 
+
+{% block title %}
+Create a Preference
+{% endblock %} 
+
+{% block main %}
+<head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+<body>
+    <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"> Set Your Preferences</h3>
+        </div>
+
+        <form id="multiple--form" method="post">
+            <!-- errors -->
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="form--alert alert-danger">
+                            {{ error|escape }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div class="form--alert alert-danger">
+                        {{ error|escape }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        
+            {% csrf_token %}
+        
+            <!-- fields -->
+            {% for field in form %}
+                <label class="{% if field.field.required %}required{% endif %}" for="{{ field.auto_id }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                <span class="field--helptext">{{ field.help_text }}</span>
+                {% endif %}
+            {% endfor %}
+            
+            <div class="form--actions">
+        
+                {% if step > 1 %}
+                    <a href="{{ step|add:-1 }}" class="nav--prev">Prev</a>
+                {% endif %}
+             
+        
+                <div class="form--actions__main">
+                    <a href="/cancel" class="nav--cancel">cancel</a>
+        
+                    {% if step < step_last %}
+                        <button type="submit" class="nav--next">Next</button>
+                    {% else %}
+                        <button type="submit" class="nav--send">Send</button>
+                    {% endif %}
+                </div>
+        
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+</body>
+{% endblock %}

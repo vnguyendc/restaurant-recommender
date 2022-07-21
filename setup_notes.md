@@ -31,3 +31,7 @@
 2. run pgadmin4
     pgadmin4
 3. https://stackpython.medium.com/how-to-start-django-project-with-a-database-postgresql-aaa1d74659d8
+
+
+## YELP
+https://www.yelp.com/developers/documentation/v3/business_search

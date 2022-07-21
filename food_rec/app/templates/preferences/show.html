@@ -5,11 +5,16 @@
 
 {% block main %}
 
-{% for pref in preferences%}
+{% for pref in preferences %}
     <div class="container">
         <h3> {{ pref }} </h3>
-        
+        <p> {{ pref.rating_threshold}} </p>
+         {% for keyword in pref.keywords %}
+         <p> {{ keyword.name }} </p>
+         {% endfor %}
     </div>
 {% endfor %}
 
+
 {% endblock %}
+

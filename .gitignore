@@ -3,3 +3,5 @@
 
 .DS_Store
 /food_rec/.DS_Store
+
+/food_rec/app/auth/secrets.yaml

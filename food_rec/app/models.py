@@ -60,13 +60,13 @@ class Preference(models.Model):
     - distance
     '''
 
-    name = models.CharField(max_length=60, default=None)
-    user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        verbose_name="related user"
-    )
-    rating_threshold = models.FloatField()
+    # name = models.CharField(max_length=60, default=None)
+    # user = models.ForeignKey(
+    #     User,
+    #     on_delete=models.CASCADE,
+    #     verbose_name="related user"
+    # )
+    # rating_threshold = models.FloatField()
     pricing_range = models.CharField(max_length=4, choices=pricingRangeChoices)
     keywords = models.ManyToManyField(
         Tag,

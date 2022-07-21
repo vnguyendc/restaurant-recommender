@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'app.apps.AppConfig',
+    'formtools'
 ]
 
 MIDDLEWARE = [
