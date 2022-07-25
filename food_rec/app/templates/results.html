@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+   Results 
+{% endblock title %}
+
+
+{% block sidebar %}
+
+{% endblock sidebar %}
+
+
+{% block header %}
+    <button type="button"><a href="{% url 'create-preference' %}">Do another search</a></button>
+    <p>search query: {{query}}</p> 
+{% endblock header %}
+    
+    
+{% block main %}
+    <div class="results-list">
+        {% for result in results %}
+        <div class="result-item">
+            <h4>{{ result.name }}</h4>
+            <img src="{{ result.image_url }}" width="500"></img>
+            <p><a href="{{ result.url }}">Yelp Link</a></p>
+            <p>{{ result.categories }}</p>
+            <p>{{ result.rating }}</p>
+            <p>{{ result.display_address }}</p>
+            <button type="button"><a >More Details</a></button>
+        </div>
+        <div class="under-result">
+            
+            {% if result_num > 1 %}
+                <button type="button"><a href="{{ result_num|add:-1 }}">Prev</a></button>
+            {% endif %}
+                
+            <button type="button"><a href="{{ result_num|add:1 }}">Next</a></button>
+        </div>
+        {% endfor %}
+    </div>
+
+     
+{% endblock main %}
+    

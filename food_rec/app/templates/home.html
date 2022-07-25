@@ -1,7 +1,18 @@
 {% extends 'main/base.html' %}
 
+{% block header %}
+    <h1>Let me make it easier for you to decide where to eat tonight...</h1>
+{% endblock header %}
+    
 {% block main %}
-<h1>Let me make it easier for you to decide where to eat tonight...</h1>
-<p>{{name}}, enter your preferences pls.</p>
+<div class="container1">
+    <div class="text1">
+        <p>{{name}}, enter your preferences pls.</p>
+    </div>
+    
+    <div class="button1">
+        <button type="button"><a href="{% url 'create-preference' %}">Create a Preference</a></button>
+    </div>
+</div>
 
 {% endblock %}
